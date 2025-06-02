@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import React from 'react';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import SectionTwo from './components/SectionTwo';
+import ServicesSection from './components/ServicesSection';
+import ServicesSection1 from './components/ServicesSection1';
+import ServicesSection2 from './components/ServiceSection2';
+import ServiceSection3 from './components/ServiceSection3';
+import SoftwareSection from './components/SoftwareSection';
+import ManagementCarousel from './components/ManagementCarousel';
+ 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="font-sans">
+      <Navbar />
+      <HeroSection />
+      <SectionTwo />
+      <ServicesSection/>
+      <ServicesSection1/>
+      <ServicesSection2/>
+      <ServiceSection3/>
+      <SoftwareSection/>
+      <ManagementCarousel/>
+     
+    </div>
+  );
+};
 
-export default App
+export default App;
