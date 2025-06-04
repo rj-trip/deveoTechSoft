@@ -7,21 +7,6 @@ const SectionTwo = () => {
     <section className="py-20 bg-white">
       <div className=" mx-auto px-12 grid md:grid-cols-2 gap-8 items-center">
 
-        {/* <div className="relative group overflow-hidden w-full h-[450px] rounded-lg shadow-xl">
-          <img
-            src={sectionImage}
-            alt="Office"
-            className="w-full h-full object-cover transform  transition duration-700 ease-in-out"
-          />
-
-          
-          <div className=" absolute left-10 transform -translate-y-1/2 bg-opacity-40 px-4 py-2 text-white text-4xl font-bold tracking-widest rotate-[-90deg] origin-left">
-            EXPERIENCE
-          </div>
-        </div>
-         */}
-
-
          <div className="relative group overflow-hidden w-full h-[450px] rounded-lg shadow-xl">
   <img
     src={sectionImage}
@@ -46,15 +31,22 @@ const SectionTwo = () => {
 
      <BtnTransition/>
 
-          
-          <div className="flex space-x-4">
-            <a href="#" className="px-6 py-2 rounded bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-300">
-              Get Started
-            </a>
-            <a href="#" className="px-6 py-2 rounded bg-white border-2 border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition duration-300">
-              Learn More
-            </a>
-          </div>
+<div className="flex space-x-4 w-fit ml-6 sm:ml-0 sm:justify-start justify-center mt-6">
+  <a
+    href="#"
+    className="px-6 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-300"
+  >
+    Get Started
+  </a>
+  <a
+    href="#"
+    className="px-6 py-2 rounded bg-white border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition duration-300"
+  >
+    Learn More
+  </a>
+</div>
+
+
         </div>
       </div>
     </section>

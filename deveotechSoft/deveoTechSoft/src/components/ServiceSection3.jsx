@@ -4,37 +4,43 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import erpImg from '../assets/erp-crm.jpg';
+import bank from '../assets/indstryImg/bank.jpeg';
+import commerce from '../assets/indstryImg/commerce.jpeg';
+import edu from '../assets/indstryImg/edu.jpeg';
+import health from '../assets/indstryImg/health.jpeg';
+import retail from '../assets/indstryImg/retail.jpeg';
+
+
 
 const industries = [
   {
     title: "Education Industry",
     content:"Focuses on enhancing learning experiences and administrative efficiency through digital platforms and tools.",
-    img:  erpImg,
+    img:  edu,
     link: "#education",
   },
   {
     title: "E-Commerce Industry",
     content:"Involves online buying and selling, requiring robust platforms for managing inventory, orders, payments, and customer interactions.",
-    img: erpImg,
+    img: commerce,
     link: "#ecommerce",
   },
   {
     title: "Banking & Finance Industry",
     content:"Emphasizes secure and efficient financial services, including transactions, data analytics, risk management, and customer support systems.",
-    img: erpImg,
+    img: bank,
     link: "#banking",
   },
   {
     title: "Healthcare Industry",
     content:"Aims to improve patient care, record management, and diagnostics through technology-driven healthcare solutions.",
-    img:  erpImg,
+    img:  health,
     link: "#healthcare",
   },
   {
     title: "Retail Industry",
     content:"Enhances the shopping experience, inventory control, and customer engagement through modern digital retail systems.",
-    img: erpImg,
+    img: retail,
     link: "#retail",
   },
 ];
