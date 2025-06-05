@@ -1,4 +1,4 @@
-import React from 'react';
+// src/pages/Home.jsx
 import HeroSection from './HeroSection';
 import SectionTwo from './SectionTwo';
 import ServicesSection from './ServicesSection';
@@ -9,6 +9,7 @@ import SoftwareSection from './SoftwareSection';
 import ManagementCarousel from './ManagementCarousel';
 import TestimonialSection from './TestimonialSection';
 import BlogSection from './BlogSection';
+import ServicesPage from '../Service/ServicePage';
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <ManagementCarousel />
       <TestimonialSection />
       <BlogSection />
+      {/* <ServicesPage/> */}
     </>
   );
 };

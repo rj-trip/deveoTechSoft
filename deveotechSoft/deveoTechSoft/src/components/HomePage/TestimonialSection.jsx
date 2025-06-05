@@ -30,7 +30,7 @@ const testimonials = [
 
 // Testimonial Card Component
 const TestimonialCard = ({ testimonial }) => (
-  <div className="relative max-w-[300px] max-h-[400px] mx-auto text-center pt-12">
+  <div className="relative max-w-[300px] max-h-[400px] mx-auto text-center pt-10">
     {/* Blue Border Wrapper */}
     <div className="relative bg-blue-500 rounded-3xl pb-6 px-3 overflow-visible">
       {/* White Inner Box */}

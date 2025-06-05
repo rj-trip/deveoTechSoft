@@ -1,47 +1,46 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import bank from '../assets/indstryImg/bank.jpeg';
-import commerce from '../assets/indstryImg/commerce.jpeg';
-import edu from '../assets/indstryImg/edu.jpeg';
-import health from '../assets/indstryImg/health.jpeg';
-import retail from '../assets/indstryImg/retail.jpeg';
-
-
+import bank from '../../assets/indstryImg/bank.jpeg';
+import commerce from '../../assets/indstryImg/commerce.jpeg';
+import edu from '../../assets/indstryImg/edu.jpeg';
+import health from '../../assets/indstryImg/health.jpeg';
+import retail from '../../assets/indstryImg/retail.jpeg';
 
 const industries = [
   {
     title: "Education Industry",
-    content:"Focuses on enhancing learning experiences and administrative efficiency through digital platforms and tools.",
-    img:  edu,
-    link: "#education",
+    content: "Focuses on enhancing learning experiences and administrative efficiency through digital platforms and tools.",
+    img: edu,
+    path: "/industry",
   },
   {
     title: "E-Commerce Industry",
-    content:"Involves online buying and selling, requiring robust platforms for managing inventory, orders, payments, and customer interactions.",
+    content: "Involves online buying and selling, requiring robust platforms for managing inventory, orders, payments, and customer interactions.",
     img: commerce,
-    link: "#ecommerce",
+    path: "/industry",
   },
   {
     title: "Banking & Finance Industry",
-    content:"Emphasizes secure and efficient financial services, including transactions, data analytics, risk management, and customer support systems.",
+    content: "Emphasizes secure and efficient financial services, including transactions, data analytics, risk management, and customer support systems.",
     img: bank,
-    link: "#banking",
+    path: "/industry",
   },
   {
     title: "Healthcare Industry",
-    content:"Aims to improve patient care, record management, and diagnostics through technology-driven healthcare solutions.",
-    img:  health,
-    link: "#healthcare",
+    content: "Aims to improve patient care, record management, and diagnostics through technology-driven healthcare solutions.",
+    img: health,
+    path: "/industry",
   },
   {
     title: "Retail Industry",
-    content:"Enhances the shopping experience, inventory control, and customer engagement through modern digital retail systems.",
+    content: "Enhances the shopping experience, inventory control, and customer engagement through modern digital retail systems.",
     img: retail,
-    link: "#retail",
+    path: "/industry",
   },
 ];
 
@@ -93,22 +92,19 @@ const ServiceSection3 = () => {
                 className="h-52 w-full object-cover"
               />
               <div className="flex flex-col justify-between p-4 flex-grow w-full text-center">
-                <h3 className=" text-gray-800 mb-4">
-                  {item.content}
-                </h3>
-                <a
-                  href={item.link}
+                <h3 className="text-gray-800 mb-4 text-sm">{item.content}</h3>
+                <Link
+                  to={item.path}
                   className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition mt-auto"
                 >
                   {item.title}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </Slider>
 
-      {/* Centered next/prev buttons */}
       <div className="flex justify-center mt-6 gap-4">
         <button
           onClick={() => sliderRef.current?.slickPrev()}

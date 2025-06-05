@@ -6,27 +6,27 @@ const blogs = [
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    link: "/blog/iot-web-design-1",
+    link: "/blog",
   },
   {
     id: 2,
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
-    link: "/blog/iot-web-design-2",
+    link: "/blog",
   },
   {
     id: 3,
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    link: "/blog/iot-web-design-3",
+    link: "/blog",
   },
 ];
 
 export default function BlogSection() {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div className="py-4 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Blogs</h2>
         <p className="text-gray-600 mb-12 max-w-2xl mx-auto">

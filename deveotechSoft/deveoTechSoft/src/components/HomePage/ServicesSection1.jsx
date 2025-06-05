@@ -1,8 +1,8 @@
 import React from 'react';
-import erpImg from '../assets/erp-crm.jpg';
-import webDesignImg from '../assets/website-design.jpg';
-import digitalMarketingImg from '../assets/digital-marketing.jpg';
-import webDevImg from '../assets/web-development.jpg';
+import erpImg from '../../assets/erp-crm.jpg';
+import webDesignImg from '../../assets/website-design.jpg';
+import digitalMarketingImg from '../../assets/digital-marketing.jpg';
+import webDevImg from '../../assets/web-development.jpg';
 
 const solutions = [
   {

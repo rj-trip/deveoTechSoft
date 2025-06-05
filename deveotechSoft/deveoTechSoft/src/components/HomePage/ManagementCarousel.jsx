@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import userImage from '../assets/th.jpeg';
-import ceoImg from '../assets/indstryImg/NavinSir.jpg'
+import userImage from '../../assets/th.jpeg';
+import ceoImg from '../../assets/indstryImg/NavinSir.jpg'
 
 // Team Members Data
 const teamMembers = [

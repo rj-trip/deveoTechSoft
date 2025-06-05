@@ -7,9 +7,9 @@ const servicesData = {
   'Web Development': ['Angular', 'Node Js', 'Php', 'Laravel', 'Cake Php', 'Python', 'Symfony', 'React Js'],
   'Digital Marketing': ['SEO Services', 'Social Media Marketing', 'PPC Advertising', 'Content Marketing', 'Email Marketing', 'Analytics & Reporting'],
   'UI/UX Design': ['User Interface Design', 'User Experience Design', 'Wireframing', 'Prototyping', 'Design Systems', 'Usability Testing'],
-  'Mobile App Development': ['iOS Development', 'Android Development', 'Cross-Platform Apps', 'React Native', 'Flutter Development', 'App Store Optimization'],
-  'CMS & Ecommerce': ['WordPress Development', 'Shopify Development', 'Magento Development', 'Custom CMS', 'E-commerce Solutions', 'Payment Integration'],
-  'Ecomerce Development': ['Custom E-commerce', 'Shopping Cart Development', 'Payment Gateway Integration', 'Inventory Management', 'Order Management', 'Multi-vendor Platforms'],
+  'Mobile App Development': ['iOS Development', 'Android Development'],
+  'CMS & Ecommerce': ['WordPress', 'Shopify Development', 'Magento Development', 'E-commerce Solutions'],
+  'Ecomerce Development': ['Magento Development', 'E-Commerce Customization', 'Shopify Development', 'WooCommerce Development'],
 };
 
 const Navbar = () => {
@@ -19,7 +19,6 @@ const Navbar = () => {
   const [activeSubDropdown, setActiveSubDropdown] = useState('');
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileActiveCategory, setMobileActiveCategory] = useState('');
-
   const timeoutRef = useRef(null);
 
   const handleScroll = useCallback(() => {
@@ -40,7 +39,7 @@ const Navbar = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown('');
       setActiveSubDropdown('');
-    }, 200);
+    }, 300);
   };
 
   const handleSubMouseEnter = (category) => {
@@ -48,42 +47,31 @@ const Navbar = () => {
     setActiveSubDropdown(category);
   };
 
-  const handleSubMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setActiveSubDropdown('');
-    }, 200);
-  };
-
-  const formatLink = (category, subcategory) =>
-    `/services/${category.toLowerCase().replace(/\s+/g, '-')}/${subcategory.toLowerCase().replace(/\s+/g, '-')}`;
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} alt="DeveoTech Logo" className="w-70 h-70 object-contain" />
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/home" className="nav-link">Home</Link>
+            <Link to="/" className="nav-link">Home</Link>
 
-            {/* Services Dropdown */}
-            <div
-              className="relative group"
-              onMouseEnter={() => handleMouseEnter('services')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="flex items-center space-x-1 nav-link">
-                <span>Services</span>
+            <div className="relative group" onMouseEnter={() => handleMouseEnter('services')}>
+              <div className="flex items-center space-x-1 nav-link cursor-pointer">
+                <Link to="/service" className="nav-link"><span>Services</span></Link>
                 <ChevronDown className="w-4 h-4" />
-              </button>
+              </div>
 
               {activeDropdown === 'services' && (
-                <div className="absolute top-full left-0 w-70 bg-white rounded-lg shadow-2xl border mt-1 z-50 flex">
-                  <div className="p-4 w-full grid gap-1">
+                <div
+                  className="absolute top-full left-0 flex z-50"
+                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={() => clearTimeout(timeoutRef.current)}
+                >
+                  {/* Left column: Categories */}
+                  <div className="w-72 bg-white rounded-lg shadow-2xl border mt-1 p-4 grid gap-1">
                     {Object.entries(servicesData).map(([category, subcategories], index) => (
                       <div key={index} className="relative">
                         <div
@@ -98,7 +86,6 @@ const Navbar = () => {
                           <div
                             className="absolute top-0 right-full mr-4 w-56 bg-white rounded-lg shadow-2xl border z-60"
                             onMouseEnter={() => handleSubMouseEnter(category)}
-                            onMouseLeave={handleSubMouseLeave}
                           >
                             <div className="p-4">
                               <h3 className="text-sm font-semibold text-gray-900 mb-3 px-2">{category}</h3>
@@ -106,7 +93,7 @@ const Navbar = () => {
                                 {subcategories.map((subcategory, subIndex) => (
                                   <Link
                                     key={subIndex}
-                                    to={formatLink(category, subcategory)}
+                                    to={`/about-category/${subcategory.replace(/\s+/g, '-').toLowerCase()}`}
                                     className="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md text-sm transition"
                                     onClick={() => {
                                       setActiveDropdown('');
@@ -130,107 +117,63 @@ const Navbar = () => {
             <Link to="/about" className="nav-link">About Us</Link>
             <Link to="/blog" className="nav-link">Blog</Link>
             <Link to="/contact" className="nav-link">Contact Us</Link>
-            <Link to="/quote" className="btn-primary">Get Quote</Link>
           </div>
 
-          {/* Mobile Toggle */}
           <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-gray-900">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-       {isOpen && (
-  <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg mt-2 p-4 rounded-b-lg animate-fade-in space-y-2">
-    <Link
-      to="/home"
-      className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100"
-      onClick={() => setIsOpen(false)}
-    >
-      Home
-    </Link>
-
-    {/* Mobile Services Accordion */}
-    <div>
-      <button
-        className="flex justify-between items-center w-full font-semibold text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100"
-        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-      >
-        <span>Services</span>
-        <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-      </button>
-
-      {mobileServicesOpen && (
-        <div className="mt-2 ml-4 space-y-2">
-          {Object.entries(servicesData).map(([category, subcategories], index) => (
-            <div key={index}>
+        {isOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg mt-2 p-4 rounded-b-lg animate-fade-in space-y-2">
+            <Link to="/" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Home</Link>
+            <div>
               <button
-                className="flex justify-between items-center w-full text-blue-600 font-medium text-sm px-2 py-1 rounded hover:bg-gray-50"
-                onClick={() => setMobileActiveCategory(prev => (prev === category ? '' : category))}
+                className="flex justify-between items-center w-full font-semibold text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               >
-                <span>{category}</span>
-                <ChevronRight
-                  className={`w-4 h-4 transition-transform ${
-                    mobileActiveCategory === category ? 'rotate-90' : ''
-                  }`}
-                />
+                <span>Services</span>
+                <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
               </button>
-
-              {mobileActiveCategory === category && (
-                <div className="ml-4 mt-1 space-y-1">
-                  {subcategories.map((subcategory, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      to={formatLink(category, subcategory)}
-                      className="block text-gray-600 hover:text-blue-600 text-sm px-2 py-1 rounded hover:bg-gray-100"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setMobileActiveCategory('');
-                        setMobileServicesOpen(false);
-                      }}
-                    >
-                      {subcategory}
-                    </Link>
+              {mobileServicesOpen && (
+                <div className="mt-2 ml-4 space-y-2">
+                  {Object.entries(servicesData).map(([category, subcategories], index) => (
+                    <div key={index}>
+                      <button
+                        className="flex justify-between items-center w-full text-blue-600 font-medium text-sm px-2 py-1 rounded hover:bg-gray-50"
+                        onClick={() => setMobileActiveCategory(prev => (prev === category ? '' : category))}
+                      >
+                        <span>{category}</span>
+                        <ChevronRight className={`w-4 h-4 transition-transform ${mobileActiveCategory === category ? 'rotate-90' : ''}`} />
+                      </button>
+                      {mobileActiveCategory === category && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          {subcategories.map((subcategory, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={`/about-category/${subcategory.replace(/\s+/g, '-').toLowerCase()}`}
+                              className="block text-gray-600 hover:text-blue-600 text-sm px-2 py-1 rounded hover:bg-gray-100"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setMobileActiveCategory('');
+                                setMobileServicesOpen(false);
+                              }}
+                            >
+                              {subcategory}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
             </div>
-          ))}
-        </div>
-      )}
-    </div>
-
-    <Link
-      to="/about"
-      className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100"
-      onClick={() => setIsOpen(false)}
-    >
-      About Us
-    </Link>
-    <Link
-      to="/blog"
-      className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100"
-      onClick={() => setIsOpen(false)}
-    >
-      Blog
-    </Link>
-    <Link
-      to="/contact"
-      className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100"
-      onClick={() => setIsOpen(false)}
-    >
-      Contact Us
-    </Link>
-    {/* <Link
-      to="/quote"
-      className="block px-4 py-2 rounded-md bg-blue-600 text-white text-center font-semibold hover:bg-blue-700"
-      onClick={() => setIsOpen(false)}
-    >
-      Get Quote
-    </Link> */}
-  </div>
-)}
-
+            <Link to="/about" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>About Us</Link>
+            <Link to="/blog" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Blog</Link>
+            <Link to="/contact" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Contact Us</Link>
+          </div>
+        )}
       </div>
     </nav>
   );

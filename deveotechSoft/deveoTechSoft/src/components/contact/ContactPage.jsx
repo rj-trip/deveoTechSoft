@@ -41,40 +41,51 @@ export default function ContactPage() {
   return (
     <div className="font-sans">
       {/* Hero Section */}
-      <div
-        className="h-72 bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${ermImg})` }}
-      >
-        <div className=" px-5 py-3 text-white text-4xl font-bold bg-orange-400 bg-opacity-80 rounded">
-          Contact Us
-        </div>
-      </div>
+<div className="relative w-full">
+  <div
+    className="relative h-74 flex items-center justify-center bg-cover bg-center w-full"
+    style={{ backgroundImage: `url(${ermImg})` }}
+  >
+    <h1 className="text-white text-4xl font-bold bg-orange-500 px-6 py-2 rounded shadow-lg mt-16">
+      Contact
+    </h1>
+  </div>
+</div>
+
+
 
       {/* Breadcrumb */}
-      <div className="py-4 px-6 text-sm">
-        <span className="text-gray-600">HOME</span> / <span className="text-orange-600 font-semibold">CONTACT US</span>
+      <div className="bg-gray-50 py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <span>HOME</span>
+            <span className="text-gray-400">/</span>
+            <span className="text-orange-500 font-semibold">SERVICES</span>
+          </div>
+        </div>
       </div>
 
       {/* Contact Section */}
-      <div className="flex flex-col md:flex-row gap-8 px-6 py-8 max-w-6xl mx-auto">
-        {/* Left Section - Contact Info */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1">
-          <h2 className="font-semibold text-lg mb-4">Company Address</h2>
-          <p>B4/351 Sector 8 Rohini, Delhi, India 110085</p>
-          <p className="mt-2">Plot No. 654, Zero Road, Near Pond, Ghitorni, Delhi - 110030</p>
-          <p className="mt-2">Noida Coming Soon..</p>
+   <div className="flex flex-col md:flex-row gap-8 px-6 py-8 max-w-6xl mx-auto">
+  {/* Left Section - Contact Info */}
+  <div className="bg-gray-100 p-6 rounded-lg shadow-md basis-full md:basis-[40%]">
+    <h2 className="font-semibold text-lg mb-4">Company Address</h2>
+    <p>B4/351 Sector 8 Rohini, Delhi, India 110085</p>
+    <p className="mt-2">Plot No. 654, Zero Road, Near Pond, Ghitorni, Delhi - 110030</p>
+    <p className="mt-2">Noida Coming Soon..</p>
 
-          <h2 className="font-semibold text-lg mt-6">E-mail</h2>
-          <p>support@deveotechsoft.com</p>
-          <p>info@deveotechsoft.com</p>
+    <h2 className="font-semibold text-lg mt-6">E-mail</h2>
+    <p>support@deveotechsoft.com</p>
+    <p>info@deveotechsoft.com</p>
 
-          <h2 className="font-semibold text-lg mt-6">Phone Numbers</h2>
-          <p>+91 8840814369</p>
-          <p>+91 7011640018</p>
-          <p>01143003926</p>
-        </div>
+    <h2 className="font-semibold text-lg mt-6">Phone Numbers</h2>
+    <p>+91 8840814369</p>
+    <p>+91 7011640018</p>
+    <p>01143003926</p>
+  </div>
 
-        {/* Right Section - Contact Form */}
+  {/* Right Section - Contact Form */}
+  <div className="basis-full md:basis-[60%]">
         <div className="flex-1">
           <div className="bg-white shadow-xl rounded-lg p-8 transition-transform hover:scale-[1.01] duration-300">
             <h2 className="text-2xl font-bold text-orange-500 mb-6 text-center">Get in Touch</h2>
@@ -123,7 +134,10 @@ export default function ContactPage() {
             </form>
           </div>
         </div>
-      </div>
+  </div>
+</div>
+
     </div>
   );
 }
+

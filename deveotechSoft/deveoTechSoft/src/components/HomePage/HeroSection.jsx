@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '../assets/bggimg.jpg'; // Replace with your bg image
+import backgroundImage from '../../assets/bggimg.jpg'; // Replace with your bg image
 
 const HeroSection = () => {
   return (
