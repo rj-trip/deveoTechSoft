@@ -4,8 +4,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import userImage from '../../assets/th.jpeg';
-import ceoImg from '../../assets/indstryImg/NavinSir.jpg'
-
+import ceoImg from '../../assets/NavinSir.jpg';
+import frontend from '../../assets/Rajlaxmi.jpg';
 // Team Members Data
 const teamMembers = [
   {
@@ -22,6 +22,11 @@ const teamMembers = [
     name: "Praveen Pandey",
     role: "Web Developer",
     img: userImage,
+  },
+    {
+    name: "Rajlaxmi",
+    role: "Frontend Designer",
+    img: frontend,
   },
 ];
 

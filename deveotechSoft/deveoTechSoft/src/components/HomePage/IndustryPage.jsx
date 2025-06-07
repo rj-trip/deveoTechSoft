@@ -30,7 +30,7 @@ const industries = [
 ];
 
 
-const Blog = () => {
+const Industries = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -75,4 +75,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Industries;

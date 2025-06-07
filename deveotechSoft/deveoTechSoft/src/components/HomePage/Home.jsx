@@ -10,6 +10,7 @@ import ManagementCarousel from './ManagementCarousel';
 import TestimonialSection from './TestimonialSection';
 import BlogSection from './BlogSection';
 import ServicesPage from '../Service/ServicePage';
+import BlogCatg from '../Blog/BlogCatg';
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <ManagementCarousel />
       <TestimonialSection />
       <BlogSection />
+     
       {/* <ServicesPage/> */}
     </>
   );

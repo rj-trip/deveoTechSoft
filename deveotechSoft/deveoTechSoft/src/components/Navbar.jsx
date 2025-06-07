@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,6 +11,15 @@ const servicesData = {
   'Mobile App Development': ['iOS Development', 'Android Development'],
   'CMS & Ecommerce': ['WordPress', 'Shopify Development', 'Magento Development', 'E-commerce Solutions'],
   'Ecomerce Development': ['Magento Development', 'E-Commerce Customization', 'Shopify Development', 'WooCommerce Development'],
+};
+
+const categoryRoutes = {
+  'Web Development': '/whatsapp',
+  'Digital Marketing': '/digital',
+  'UI/UX Design': '/uiux',
+  'Mobile App Development': '/mobile',
+  'CMS & Ecommerce': '/cms',
+  'Ecomerce Development': '/ecommerce',
 };
 
 const Navbar = () => {
@@ -60,17 +70,14 @@ const Navbar = () => {
 
             <div className="relative group" onMouseEnter={() => handleMouseEnter('services')}>
               <div className="flex items-center space-x-1 nav-link cursor-pointer">
-                <Link to="/service" className="nav-link"><span>Services</span></Link>
+                <Link to="/service" className="flex items-center space-x-2">
+                  <span className="nav-link">Services</span>
+                </Link>
                 <ChevronDown className="w-4 h-4" />
               </div>
 
               {activeDropdown === 'services' && (
-                <div
-                  className="absolute top-full left-0 flex z-50"
-                  onMouseLeave={handleMouseLeave}
-                  onMouseEnter={() => clearTimeout(timeoutRef.current)}
-                >
-                  {/* Left column: Categories */}
+                <div className="absolute top-full left-0 flex z-50" onMouseLeave={handleMouseLeave}>
                   <div className="w-72 bg-white rounded-lg shadow-2xl border mt-1 p-4 grid gap-1">
                     {Object.entries(servicesData).map(([category, subcategories], index) => (
                       <div key={index} className="relative">
@@ -78,13 +85,21 @@ const Navbar = () => {
                           className="flex items-center justify-between px-4 py-3 hover:bg-blue-50 cursor-pointer rounded-lg transition group/item"
                           onMouseEnter={() => handleSubMouseEnter(category)}
                         >
-                          <span className="text-gray-700 group-hover/item:text-blue-600 font-medium">{category}</span>
+                          <Link
+                            to={categoryRoutes[category] || '#'}
+                            className="text-gray-700 group-hover/item:text-blue-600 font-medium"
+                            onClick={() => {
+                              setActiveDropdown('');
+                              setActiveSubDropdown('');
+                            }}
+                          >
+                            {category}
+                          </Link>
                           <ChevronLeft className="w-4 h-4 text-gray-400 group-hover/item:text-blue-600" />
                         </div>
 
                         {activeSubDropdown === category && (
-                          <div
-                            className="absolute top-0 right-full mr-4 w-56 bg-white rounded-lg shadow-2xl border z-60"
+                          <div className="absolute top-0 right-full mr-4 w-56 bg-white rounded-lg shadow-2xl border z-60"
                             onMouseEnter={() => handleSubMouseEnter(category)}
                           >
                             <div className="p-4">
@@ -115,7 +130,7 @@ const Navbar = () => {
             </div>
 
             <Link to="/about" className="nav-link">About Us</Link>
-            <Link to="/blog" className="nav-link">Blog</Link>
+            <Link to="/blogCatg" className="nav-link">Blog</Link>
             <Link to="/contact" className="nav-link">Contact Us</Link>
           </div>
 
@@ -139,13 +154,26 @@ const Navbar = () => {
                 <div className="mt-2 ml-4 space-y-2">
                   {Object.entries(servicesData).map(([category, subcategories], index) => (
                     <div key={index}>
-                      <button
-                        className="flex justify-between items-center w-full text-blue-600 font-medium text-sm px-2 py-1 rounded hover:bg-gray-50"
-                        onClick={() => setMobileActiveCategory(prev => (prev === category ? '' : category))}
-                      >
-                        <span>{category}</span>
-                        <ChevronRight className={`w-4 h-4 transition-transform ${mobileActiveCategory === category ? 'rotate-90' : ''}`} />
-                      </button>
+                      <div className="flex justify-between items-center w-full text-blue-600 font-medium text-sm px-2 py-1 rounded hover:bg-gray-50">
+                        <Link
+                          to={categoryRoutes[category] || '#'}
+                          className="hover:underline"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setMobileActiveCategory('');
+                            setMobileServicesOpen(false);
+                          }}
+                        >
+                          {category}
+                        </Link>
+                        <ChevronRight
+                          className={`w-4 h-4 transition-transform cursor-pointer ${mobileActiveCategory === category ? 'rotate-90' : ''}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setMobileActiveCategory(prev => (prev === category ? '' : category));
+                          }}
+                        />
+                      </div>
                       {mobileActiveCategory === category && (
                         <div className="ml-4 mt-1 space-y-1">
                           {subcategories.map((subcategory, subIndex) => (
@@ -170,7 +198,7 @@ const Navbar = () => {
               )}
             </div>
             <Link to="/about" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>About Us</Link>
-            <Link to="/blog" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Blog</Link>
+            <Link to="/blogCatg" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Blog</Link>
             <Link to="/contact" className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Contact Us</Link>
           </div>
         )}

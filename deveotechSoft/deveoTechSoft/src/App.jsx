@@ -8,8 +8,17 @@ import AboutUs from './components/AboutUs/AboutUs';
 import ContactPage from './components/contact/ContactPage'; // Uncomment if exists
 import Service from './components/Service/ServicePage'
 import IndustryPage from './components/HomePage/IndustryPage';
-import Blog from './components/AboutUs/Blog/Blog';
-import AboutCatg from './components/AboutUs/AboutCatg';const App = () => {
+import Blog from './components/Blog/Blog';
+import WhatsApp from './components/Blog/Whatsapp';
+import BlogCatg from './components/Blog/BlogCatg';
+import AboutCatg from './components/AboutUs/AboutCatg';
+import Mobile from './components/Service/Mobile';
+
+import CMS from './components/Service/CMS';
+import Ecommerce from './components/Service/Ecommerce';
+import UiUx from './components/Service/UiUx';
+import Digital from './components/Service/Digital';
+const App = () => {
   return (
     <>
       <Navbar />
@@ -20,10 +29,17 @@ import AboutCatg from './components/AboutUs/AboutCatg';const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/quote" element={<Home />} />
         <Route path="/industry" element={<IndustryPage />} />
+        <Route path="/blogCatg" element={<BlogCatg />} />        
+        <Route path='/cms' element={<CMS/>}/>
+        <Route path='/mobile' element={<Mobile/>}/>
+        <Route path='/ecommerce' element={<Ecommerce/>}/>
+        <Route path='/uiux' element={<UiUx/>}/>
+        <Route path='/digital' element={<Digital/>}/>
 
         {/* ✅ Dynamic Route */}
+        <Route path="/whatsapp" element={<WhatsApp />} />
+
        <Route path="/about-category/:subcategory" element={<AboutCatg />} />
         {/* <Route path="/industry/:industryType" element={<IndustryPage />} /> */}
 

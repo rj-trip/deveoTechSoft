@@ -39,7 +39,6 @@ const TestimonialCard = ({ testimonial }) => (
         <div className="absolute top-0 left-0 bg-orange-500 text-white text-sm px-4 py-2 rounded-full font-medium z-20">
           {testimonial.location}
         </div>
-
         {/* Avatar */}
         <div className="absolute -top-8 right-3 w-18 h-18 p-1 border-4 border-orange-400 rounded-full bg-white shadow-md z-20">
           <img
@@ -68,7 +67,7 @@ const TestimonialCard = ({ testimonial }) => (
 
 // Testimonial Section with Swiper Carousel
 const TestimonialSection = () => (
-  <section className="py-20 bg-gray-50 overflow-hidden">
+  <section className="py-12 bg-gray-50 overflow-hidden">
     <div className="max-w-6xl mx-auto px-4">
       <Swiper
         modules={[Autoplay]}

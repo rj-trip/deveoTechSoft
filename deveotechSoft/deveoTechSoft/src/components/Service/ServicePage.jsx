@@ -16,7 +16,7 @@ const ServicePage = () => {
     style={{ backgroundImage: `url(${ermImg})` }}
   >
     <h1 className="text-white text-4xl font-bold bg-orange-500 px-6 py-2 rounded shadow-lg mt-16">
-      About
+      Service
     </h1>
   </div>
 </div>

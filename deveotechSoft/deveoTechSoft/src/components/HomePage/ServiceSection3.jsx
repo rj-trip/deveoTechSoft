@@ -82,28 +82,29 @@ const ServiceSection3 = () => {
         We deliver innovative digital solutions tailored for diverse industries, driving efficiency and growth.
       </p>
 
-      <Slider {...settings} ref={sliderRef}>
-        {industries.map((item, index) => (
-          <div key={index} className="px-1">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center h-[420px] w-full max-w-[300px] mx-auto hover:shadow-lg transition duration-300">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="h-52 w-full object-cover"
-              />
-              <div className="flex flex-col justify-between p-4 flex-grow w-full text-center">
-                <h3 className="text-gray-800 mb-4 text-sm">{item.content}</h3>
-                <Link
-                  to={item.path}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition mt-auto"
-                >
-                  {item.title}
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
+<Slider {...settings} ref={sliderRef}>
+  {industries.map((item, index) => (
+    <div key={index} className="px-1">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center h-[380px] w-full max-w-[300px] mx-auto hover:shadow-lg transition duration-300">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="h-52 w-full object-cover"
+        />
+        <div className="flex flex-col justify-between p-4 flex-grow w-full text-center">
+          <h3 className="text-gray-800 text-sm mb-2">{item.content}</h3> {/* <- reduced spacing */}
+          <Link
+            to={item.path}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+          >
+            {item.title}
+          </Link>
+        </div>
+      </div>
+    </div>
+  ))}
+</Slider>
+
 
       <div className="flex justify-center mt-6 gap-4">
         <button
