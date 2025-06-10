@@ -36,8 +36,9 @@ const SectionTwo = () => {
             Welcome to DeveoTech Software Solution
           </h2>
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-            Discover innovative software development and IT services tailored for your business needs.
-            Our team delivers scalable solutions powered by the latest technology trends.
+            At Deveotech Software Solutions, we are dedicated to transforming your ideas into innovative digital realities.
+             Our mission is to empower businesses by providing cutting-edge software solutions tailored to meet their unique needs.
+              With a team of experienced professionals, we leverage the latest technologies and industry best practices to deliver...
           </p>
 
           {/* Highlight Cards */}

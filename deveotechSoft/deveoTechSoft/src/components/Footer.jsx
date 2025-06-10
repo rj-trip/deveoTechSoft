@@ -413,10 +413,42 @@ const Footer= () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="text-center border-t border-gray-800 py-4 text-gray-500">
-        Copyright © 2025 Deveotech. All Rights Reserved.
-      </div>
+
+{/* Footer Links */}
+<div className="text-center border-t border-gray-800 py-4 text-gray-500">
+  <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+    <a
+      href="/privacy-policy"
+      className="hover:text-orange-500 transition-colors duration-300"
+    >
+      Privacy Policy
+    </a>
+    <a
+      href="/disclaimer"
+      className="hover:text-orange-500 transition-colors duration-300"
+    >
+      Disclaimer
+    </a>
+    <a
+      href="/refund-policy"
+      className="hover:text-orange-500 transition-colors duration-300"
+    >
+      Return/Refund Policy
+    </a>
+    <a
+      href="/cookies-policy"
+      className="hover:text-orange-500 transition-colors duration-300"
+    >
+      Cookies Policy
+    </a>
+  </div>
+</div>
+
+{/* Footer Bottom */}
+<div className="text-center border-t border-gray-800 py-4 text-gray-500 text-sm md:text-base">
+  © 2025 Deveotech Software Solution. All Rights Reserved.
+</div>
+
 
       {/* Floating Contact Buttons - Right Side */}
       <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end space-y-2 pointer-events-none md:items-end">

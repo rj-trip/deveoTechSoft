@@ -3,9 +3,10 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import userImage from '../../assets/th.jpeg';
+import userImage from '../../assets/office.jpg';
 import ceoImg from '../../assets/NavinSir.jpg';
 import frontend from '../../assets/Rajlaxmi.jpg';
+import webD from '../../assets/Praveen.png'
 // Team Members Data
 const teamMembers = [
   {
@@ -21,7 +22,7 @@ const teamMembers = [
   {
     name: "Praveen Pandey",
     role: "Web Developer",
-    img: userImage,
+    img: webD,
   },
     {
     name: "Rajlaxmi",

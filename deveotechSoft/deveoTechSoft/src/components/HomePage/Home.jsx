@@ -9,8 +9,7 @@ import SoftwareSection from './SoftwareSection';
 import ManagementCarousel from './ManagementCarousel';
 import TestimonialSection from './TestimonialSection';
 import BlogSection from './BlogSection';
-import ServicesPage from '../Service/ServicePage';
-import BlogCatg from '../Blog/BlogCatg';
+import Pricing from './Pricing';
 
 const Home = () => {
   return (
@@ -22,6 +21,7 @@ const Home = () => {
       <ServicesSection2 />
       <ServiceSection3 />
       <SoftwareSection />
+      <Pricing/>
       <ManagementCarousel />
       <TestimonialSection />
       <BlogSection />

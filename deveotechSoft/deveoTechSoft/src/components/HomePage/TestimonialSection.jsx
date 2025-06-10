@@ -9,7 +9,7 @@ const testimonials = [
     name: "Santosh Singh",
     location: "Lucknow, Uttar Pradesh",
     message:
-      "Communication. They helped me with website consultation. I am very pleased with his inputs and I look forward to connecting with him in the near future on other projects.",
+      "Communication. They helped me with website consultation. I am very pleased with his inputs and I look forward to connecting with him in the near future.",
     avatar: "https://cdn-icons-png.flaticon.com/512/219/219983.png",
   },
   {

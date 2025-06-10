@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Mail, Phone, Target, Eye, Shield, Trophy } from 'lucide-react';
 import ermImg from '../../assets/bg.jpg';
 
-const AboutUs = () => {
+const Return = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Floating Action Buttons */}
@@ -28,7 +28,7 @@ const AboutUs = () => {
           style={{ backgroundImage: `url(${ermImg})` }}
         >
     <h1 className="text-white text-4xl font-bold bg-orange-500 px-6 py-2 rounded shadow-lg mt-16">
-      About
+     Return & Refund
     </h1>
         </div>
       </div>
@@ -88,50 +88,10 @@ const AboutUs = () => {
             </p>
           </section>
         </div>
-
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up">
-          <Card
-            icon={<Target className="w-6 h-6 text-black" />}
-            title="Our Mission"
-            bgColor="bg-emerald-600"
-            content="Deliver innovative and reliable web solutions that empower businesses globally."
-          />
-          <Card
-            icon={<Eye className="w-6 h-6 text-black" />}
-            title="Our Vision"
-            bgColor="bg-sky-500"
-            content="To be a globally trusted leader in digital innovation and development."
-          />
-          <Card
-            icon={<Shield className="w-6 h-6 text-black" />}
-            title="Our Values"
-            bgColor="bg-orange-500"
-            content="Integrity, innovation, transparency, and customer-first thinking."
-          />
-          <Card
-            icon={<Trophy className="w-6 h-6 text-black" />}
-            title="Our Goal"
-            bgColor="bg-purple-600"
-            content="Scalable, user-friendly, high-performance products that drive growth."
-          />
-        </div>
       </div>
     </div>
   );
 };
 
-// Reusable Card Component
-const Card = ({ icon, title, bgColor, content }) => (
-  <div className={`${bgColor} text-white p-6 rounded-lg shadow-xl transform transition hover:-translate-y-1 hover:shadow-2xl`}>
-    <div className="flex items-center mb-4">
-      <div className="bg-white bg-opacity-20 p-2 rounded-full mr-3">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold">{title}</h3>
-    </div>
-    <p className="text-sm leading-relaxed">{content}</p>
-  </div>
-);
 
-export default AboutUs;
+export default Return ;

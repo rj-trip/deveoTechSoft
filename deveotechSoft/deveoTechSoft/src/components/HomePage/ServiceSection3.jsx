@@ -79,8 +79,7 @@ const ServiceSection3 = () => {
         Industry <span className="text-blue-600">We Serve</span>
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">
-        We deliver innovative digital solutions tailored for diverse industries, driving efficiency and growth.
-      </p>
+We cater to a diverse range of industries, delivering innovative digital solutions designed to enhance efficiency, growth, and customer engagement. From manufacturing to healthcare, we tailor our services to meet industry-specific needs.      </p>
 
 <Slider {...settings} ref={sliderRef}>
   {industries.map((item, index) => (

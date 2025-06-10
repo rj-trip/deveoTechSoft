@@ -60,7 +60,7 @@ const categories = [
 ];
 
 export default function BlogHomePage() {
-  const featuredPost = blogPosts[0]; // only first post for main view
+  const featuredPost = blogPosts[0];
 
   return (
     <div>
@@ -76,9 +76,9 @@ export default function BlogHomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full p-4 md:p-10 gap-6 min-h-screen">
-        {/* Left Section: Only one main blog */}
-        <div className="w-full md:w-4/5 max-h-screen overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300">
+      <div className="flex flex-col md:flex-row w-full p-4 md:p-10 gap-6">
+        {/* Left Section */}
+        <div className="w-full md:w-4/5 pr-2">
           <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <img
               src={featuredPost.image}
@@ -94,8 +94,7 @@ export default function BlogHomePage() {
                 {featuredPost.title}
               </h3>
               <p className="text-gray-600 text-base mb-4">{featuredPost.excerpt}</p>
-
-              <div className="bg-gray-50 p-4 rounded-md shadow-sm mb-4 border border-gray-200">
+              <div className="bg-gray-10 p-4 rounded-md shadow-sm mb-4 border border-gray-200">
                 <h4 className="text-lg font-semibold mb-2 text-orange-600">
                   In-depth Overview
                 </h4>
@@ -105,11 +104,64 @@ export default function BlogHomePage() {
               </div>
             </div>
           </div>
+
+          {/* Comment Section */}
+          <div className="bg-white w-full p-6 pt-2 md:p-12 mt-6 rounded-lg">
+            <h4 className="text-2xl font-semibold text-orange-600 mb-4">Leave a Comment</h4>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Comment</label>
+                <textarea
+                  rows="4"
+                  placeholder="Write your comment..."
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition"
+              >
+                Submit Comment
+              </button>
+            </form>
+          </div>
+
+          {/* Display Comments */}
+          <div className="mt-10">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4">Comments</h4>
+            <div className="space-y-6">
+              {[
+                {
+                  name: 'Anjali Verma',
+                  message: 'This was super informative! Loved the breakdown of 2025 trends.',
+                },
+                {
+                  name: 'Rohit Sharma',
+                  message: 'Excited to see how AI will continue to shape development!',
+                },
+                {
+                  name: 'Sneha Patel',
+                  message: 'Well-written and very relevant. Looking forward to more blogs like this!',
+                },
+              ].map((comment, idx) => (
+                <div key={idx} className="border-b pb-4">
+                  <h5 className="font-semibold text-gray-700">{comment.name}</h5>
+                  <p className="text-gray-600 text-sm mt-1">{comment.message}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        
-
-        {/* Right Section: Recent Posts and Categories */}
+        {/* Right Section */}
         <div className="w-full md:w-1/5">
           <div className="sticky top-0 max-h-screen overflow-y-auto pr-2">
             {/* Search Box */}
@@ -169,35 +221,6 @@ export default function BlogHomePage() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Comment Section */}
-      <div className="bg-white p-6 mt-6 rounded-lg shadow border border-gray-200">
-        <h4 className="text-xl font-semibold text-orange-600 mb-4">Leave a Comment</h4>
-        <form className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Comment</label>
-            <textarea
-              rows="4"
-              placeholder="Write your comment..."
-              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition"
-          >
-            Submit Comment
-          </button>
-        </form>
       </div>
     </div>
   );
