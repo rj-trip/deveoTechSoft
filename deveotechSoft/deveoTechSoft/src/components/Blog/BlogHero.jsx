@@ -103,7 +103,7 @@ export default function BlogHomePage() {
           <div className="flex items-center space-x-2 text-sm text-gray-600">
             <span className="hover:text-orange-500 cursor-pointer">HOME</span>
             <span className="text-gray-400">/</span>
-            <span className="text-orange-500 font-semibold">ABOUT</span>
+            <span className="text-orange-500 font-semibold">Blog</span>
           </div>
         </div>
       </div>

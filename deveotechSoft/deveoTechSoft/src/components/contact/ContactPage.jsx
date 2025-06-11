@@ -55,12 +55,12 @@ export default function ContactPage() {
 
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
+      <div className="bg-gray-50 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <span>HOME</span>
+            <span className="hover:text-orange-500 cursor-pointer">HOME</span>
             <span className="text-gray-400">/</span>
-            <span className="text-orange-500 font-semibold">SERVICES</span>
+            <span className="text-orange-500 font-semibold">Contact</span>
           </div>
         </div>
       </div>

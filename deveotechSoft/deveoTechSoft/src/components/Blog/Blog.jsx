@@ -298,18 +298,20 @@ export default function BlogHomePage() {
             <span className="hover:text-orange-500 cursor-pointer">HOME</span>
             <span className="text-gray-400">/</span>
             <span className="text-orange-500 font-semibold">Blog</span>
+            <span className="text-gray-400">/</span>
+            <span className="text-orange-500 font-semibold">Your Digital Growth Partner..</span>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full p-4 md:p-10 gap-6">
+      <div className="flex flex-col md:flex-row w-full p-0 md:p-10 gap-6">
         {/* Left Section - Main Blog Content */}
         <div className="w-full md:w-4/5 pr-2">
           <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <img
               src={featuredPost.image}
               alt={featuredPost.title}
-              className="w-full h-80 object-cover"
+              className="w-full p-1 h-60 md:h-80 object-cover"
             />
             <div className="p-6">
               <div className="text-orange-500 flex items-center text-sm mb-2">
@@ -320,9 +322,8 @@ export default function BlogHomePage() {
                 {featuredPost.title}
               </h3>
               <p className="text-gray-600 text-base mb-4">{featuredPost.excerpt}</p>
-              <div className="bg-gray-10 p-4 rounded-md shadow-sm mb-4 border border-gray-200">
+              <div className="bg-gray-10 p-1 md:p-2 rounded-md shadow-sm mb-4 border border-gray-200">
 
-                {/* Using dangerouslySetInnerHTML to render description with HTML and line breaks */}
                 <div
                   className="text-gray-700 text-sm leading-relaxed tracking-wide" // Removed whitespace-pre-line as HTML handles spacing now
                   dangerouslySetInnerHTML={{ __html: featuredPost.description }}
