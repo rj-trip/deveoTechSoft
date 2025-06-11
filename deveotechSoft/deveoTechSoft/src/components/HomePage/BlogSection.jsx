@@ -6,21 +6,21 @@ const blogs = [
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    link: "/blog",
+    link: "/blog2",
   },
   {
     id: 2,
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
-    link: "/blog",
+    link: "/blog2",
   },
   {
     id: 3,
     title: "IoT and Web Design Services: A High Performing Combination",
     date: "23 Apr 2024",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    link: "/blog",
+    link: "/blog2",
   },
 ];
 

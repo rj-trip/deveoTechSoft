@@ -23,6 +23,7 @@ import PrivacyPolicy from '../src/components/Footer/PrivacyPolicy'
 import Disclamer from '../src/components/Footer/Disclamer'
 import Cookies from '../src/components/Footer/Cookies'
 import Return from '../src/components/Footer/Return'
+import Blog2 from '../src/components/Blog/Blog2'
 const App = () => {
   return (
     <>
@@ -51,7 +52,7 @@ const App = () => {
         <Route path='/ecommerce' element={<Ecommerce/>}/>
         <Route path='/uiux' element={<UiUx/>}/>
         <Route path='/digital' element={<Digital/>}/>
-
+        <Route path='/blog2' element={<Blog2/>}/>
         {/* ✅ Dynamic Route */}
         <Route path="/whatsapp" element={<WhatsApp />} />
 

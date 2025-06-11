@@ -45,11 +45,13 @@ const ServiceCard = () => {
             key={index}
             className="bg-white rounded-2xl shadow-md p-6 transition-all duration-300 ease-in-out hover:bg-orange-100 hover:shadow-xl hover:scale-[1.03]"
           >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-20 h-20 mx-auto mb-4 object-contain"
-            />
+            <div className="w-full h-40 mb-4 overflow-hidden rounded-lg"> {/* Added a wrapper div for consistent image sizing */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full object-cover" // Key changes: w-full h-full object-cover
+              />
+            </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
             <p className="text-gray-600 mb-4">{service.description}</p>
             <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition">

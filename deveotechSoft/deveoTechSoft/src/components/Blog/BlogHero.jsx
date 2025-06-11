@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CalendarDays, Search } from 'lucide-react';
 import ermImg from '../../assets/bg.jpg';
-
+import blog from '../../assets/blog.jpg'
+import blog2 from '../../assets/blog2.jpg'
 const allBlogPosts = [
   {
     title: 'Top Web Development Trends to Watch in 2025',
@@ -10,7 +11,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'Discover the hottest web development trends of 2025 including serverless architectures, AI-powered coding assistants, and faster frontend frameworks.',
-    image: 'https://i.ibb.co/Fm9Cgpn/blog1.png',
+    image: blog,
     path: '/blog',
   },
   {
@@ -19,7 +20,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'From SEO to influencer marketing, explore how digital marketing strategies are helping businesses scale in 2025.',
-    image: 'https://i.ibb.co/BTmXT19/blog2.png',
+    image: blog2,
     path: '/blog',
   },
   {
@@ -28,7 +29,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'Stay ahead with the top UI/UX design tips that focus on user-centered design, accessibility, and smooth user journeys.',
-    image: 'https://i.ibb.co/yYbCJYp/blog3.png',
+    image: blog2,
     path: '/blog',
   },
   {
@@ -37,7 +38,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'AI is shaping the future of web development. Learn how it’s changing workflows and boosting productivity.',
-    image: 'https://i.ibb.co/BTmXT19/blog2.png',
+    image:blog,
     path: '/blog',
   },
   {
@@ -46,7 +47,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'Level up your React skills with the newest tools and best practices for modern development.',
-    image: 'https://i.ibb.co/Fm9Cgpn/blog1.png',
+    image: blog2,
     path: '/blog',
   },
   {
@@ -55,7 +56,7 @@ const allBlogPosts = [
     author: 'Suresh Bind',
     excerpt:
       'Explore how Flutter is changing the game in mobile app development with single codebase deployment.',
-    image: 'https://i.ibb.co/yYbCJYp/blog3.png',
+    image: blog,
     path: '/blog',
   },
 ];

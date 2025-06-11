@@ -1,11 +1,11 @@
 import React from 'react';
 import bgImg from '../../assets/bg.jpg';
-import section1Img from '../../assets/bg.jpg';
-import section2Img from '../../assets/bg.jpg';
-import section3Img from '../../assets/bg.jpg';
-import section4Img from '../../assets/bg.jpg';
-import section5Img from '../../assets/bg.jpg';
-import section6Img from '../../assets/bg.jpg';
+import section1Img from '../../assets/Mobile/mob1.avif';
+import section2Img from '../../assets/Mobile/mob2.webp';
+import section3Img from '../../assets/Mobile/mob3.webp';
+import section4Img from '../../assets/Mobile/mob4.webp';
+import section5Img from '../../assets/Mobile/mob5.webp';
+import section6Img from '../../assets/Mobile/mob6.jpg';
 
 const AboutUsMobileAppDelhi = () => {
   return (
@@ -20,21 +20,22 @@ const AboutUsMobileAppDelhi = () => {
         </h1>
       </div>
 
-            {/* Breadcrumb */}
+      {/* Breadcrumb */}
       <div className="bg-gray-50 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
             <span className="hover:text-orange-500 cursor-pointer">HOME</span>
             <span className="text-gray-400">/</span>
-            <span className="text-orange-500 font-semibold">ABOUT</span>
+            <span className="text-orange-500 font-semibold">Service</span>
           </div>
         </div>
       </div>
 
       <div className="px-4 md:px-16 lg:px-32 py-10 space-y-16 text-gray-800">
-        {/* Section Template */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src={section1Img} alt="Overview" className="rounded-lg shadow-md" />
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          <div className="w-full h-full">
+            <img src={section1Img} alt="Overview" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">Overview</h2>
             <p>In today’s fast-paced digital era, mobile application development has become the cornerstone of modern business success. As customer preferences rapidly shift toward mobile-first experiences, having a robust, user-friendly mobile app is no longer optional—it’s essential. From small startups to well-established enterprises, businesses of all sizes are leveraging mobile apps to enhance customer engagement, streamline operations, and drive growth.</p>
@@ -44,7 +45,7 @@ const AboutUsMobileAppDelhi = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">The Role of a Mobile App Development Company in Building Your Brand</h2>
             <p>In today’s mobile-driven world, your mobile application often serves as the first point of interaction between your brand and potential customers. The design, functionality, and performance of your app determine whether users stay engaged or abandon it within seconds. This is where an experienced mobile app development company becomes essential—they craft intelligent, user-centric apps that captivate and convert.</p>
@@ -59,11 +60,15 @@ const AboutUsMobileAppDelhi = () => {
             <h3 className="text-2xl font-semibold mt-4">Scalability for Future Growth</h3>
             <p>A well-built mobile application should be ready to grow with your business. Scalable architecture and flexible back-end infrastructure ensure that you can easily add new features or accommodate a growing user base without rebuilding from scratch.</p>
           </div>
-          <img src={section2Img} alt="Building Brand" className="rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img src={section2Img} alt="Building Brand" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src={section3Img} alt="Partner" className="rounded-lg shadow-md" />
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          <div className="w-full h-full">
+            <img src={section3Img} alt="Partner" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">Why You Need a Mobile Application Development Partner</h2>
             <p>Creating a stunning mobile app is just the beginning. Without the right strategies to promote, update, and engage users, even the best apps can fail to gain traction. That’s why partnering with a skilled mobile app development company goes beyond coding—they become your strategic ally in launching and growing your digital presence.</p>
@@ -80,16 +85,20 @@ const AboutUsMobileAppDelhi = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">How Mobile Application Development Enhances Business Efficiency</h2>
             <p>In the current digital-first world, the backbone of any successful business lies in its ability to leverage powerful mobile solutions. From customer engagement to internal operations, mobile applications serve as critical tools to streamline processes, improve communication, and boost productivity. A mobile application development company plays a central role in crafting these custom solutions tailored to meet specific business needs.</p>
           </div>
-          <img src={section4Img} alt="Efficiency" className="rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img src={section4Img} alt="Efficiency" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src={section5Img} alt="Core Services" className="rounded-lg shadow-md" />
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          <div className="w-full h-full">
+            <img src={section5Img} alt="Core Services" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">Core Services Provided by a Mobile App Development Company</h2>
             <h3 className="text-2xl font-semibold mt-4">Custom App Development</h3>
@@ -105,7 +114,7 @@ const AboutUsMobileAppDelhi = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
           <div>
             <h2 className="text-3xl font-semibold text-orange-500">Why Choose a Mobile App Development Company in Delhi?</h2>
             <p>Delhi has emerged as a major technology hub in India, housing many of the nation’s top-performing IT and mobile development agencies. Collaborating with a Delhi-based mobile app development company brings distinct advantages in terms of cost, communication, and talent.</p>
@@ -118,7 +127,9 @@ const AboutUsMobileAppDelhi = () => {
             <h3 className="text-2xl font-semibold mt-4">Skilled Talent Pool</h3>
             <p>With access to premier engineering colleges and a thriving tech community, Delhi offers a rich pool of talented developers, designers, and QA professionals.</p>
           </div>
-          <img src={section6Img} alt="Delhi Company" className="rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img src={section6Img} alt="Delhi Company" className="w-full h-full object-cover rounded-lg shadow-md" />
+          </div>
         </div>
 
         <div>
